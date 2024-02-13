@@ -12,6 +12,23 @@ options.add_argument("--headless")
 driver = webdriver.Firefox(options=options)
 
 #get the names and address of all hotels in lagos.
+
+"""_summary_
+
+get_hotel_details
+------------
+This function extracts the names and addresses of all hotels in lagos from the hotels.ng website
+
+Parameters
+----------
+page_no : int
+    The page number of the hotels.ng website to scrape
+
+Returns
+-------
+list
+"""
+    
 def get_hotel_details(page_no):
     url=f"https://hotels.ng/hotels-in-lagos/{page_no}" 
     driver.get(url)
@@ -28,6 +45,7 @@ def get_hotel_details(page_no):
     return hotel_details
 
 
+#Scrape the website
 w=[]
 for i in range(0,361):
     print(f"page_no: {i}")
